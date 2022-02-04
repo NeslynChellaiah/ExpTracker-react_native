@@ -12,6 +12,9 @@ const MonthOverview = () => {
     return (
     <View style={styles.screen}>
         <View style={styles.monthContainer}>
+          <Text style={styles.boldText}>December 2021</Text>
+          <Text style={styles.textGrey}>Total Expense</Text>
+          <Text style={styles.boldText}>{(Math.random()*9000).toFixed(0)}</Text>
         </View>
         <Text style={styles.listLabel}>December 2021 Expenses:</Text>
         <ScrollView style={styles.scrollArea}>
@@ -24,7 +27,7 @@ const MonthOverview = () => {
                   </View>
                   <View style={styles.listItemFlex2}>
                     <Text style={styles.listItemTextWhite}>{amount + '/-'}</Text>
-                    <Text style={styles.listItemTextGrey}>{date}</Text>
+                    <Text style={styles.textGrey}>{date}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -35,22 +38,28 @@ const MonthOverview = () => {
     )
 }
 
+const purple = "#5B21B6";
+const bgClr = '#171717';
+const textStyle = 'Poppins';
+
 const styles = StyleSheet.create({
-    monthContainer: {
-      backgroundColor: "#5B21B6",
-      height: 179,
-      width: "100%",
-      borderRadius: 15,
-      marginTop: 40,
-      alignSelf: 'center'
-    },
     screen: {
-      backgroundColor: '#171717',
+      backgroundColor: bgClr,
       height: "100%",
       width: "100%",
       display: "flex",
       paddingLeft: 20,
       paddingRight: 20
+    },
+    monthContainer: {
+      backgroundColor: purple,
+      height: 179,
+      width: "100%",
+      borderRadius: 15,
+      marginTop: 10,
+      padding: 20,
+      paddingTop: 30,
+      alignSelf: 'center'
     },
     listLabel: {
       color: "#ffffff",
@@ -71,9 +80,9 @@ const styles = StyleSheet.create({
       color: '#ffffff',
       fontSize: 14
     },
-    listItemTextGrey: {
-      fontSize: 14,
-      color: "#bfbfbf"
+    textGrey: {
+      color: "#bfbfbf",
+      fontSize: 14
     },
     listItemFlex1: {
       display: 'flex'
@@ -83,6 +92,21 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: 'space-between',
       marginTop: 10
+    },
+    boldText: {
+      color: '#ffffff',
+      fontWeight: 'bold',
+      fontSize: 24
+    },
+    button: {
+      borderRadius: 20,
+      width: 120,
+      backgroundColor: purple,
+      alignSelf: 'center',
+      margin: 20
+    },
+    buttonLabel: {
+      fontSize: 10,
     }
   });
 
